@@ -14,7 +14,7 @@ This is a repository to showcase skills, share projects and track my progress in
 #### R Studio
 * Description :
 #### Python
-* Description :
+* Description : created a simple game
 
 
 ## Group Projects

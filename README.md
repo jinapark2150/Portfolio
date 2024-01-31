@@ -19,7 +19,7 @@ This is a repository to showcase skills, share projects and track my progress in
 
 ## Group Projects
 ### R Studio
-#### [Optimizing Concrete Aggregate Selection for Moisture Absorption](Optimizing Concrete Aggregate Selection for Moisture Absorption.R)
+#### [Optimizing Concrete Aggregate Selection for Moisture Absorption](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/c35875dad891693cb9c16fef21036cdb7c81f604/Optimizing%20Concrete%20Aggregate%20Selection%20for%20Moisture%20Absorption.R)
 * Purpose:
   + Determined the most effective concrete aggregate type in terms of moisture absorption, contributing to enhanced material performance in construction projects.
 * Role:

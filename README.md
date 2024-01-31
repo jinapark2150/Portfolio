@@ -8,7 +8,7 @@ In my free time, I enjoy exploring new data analysis tools and techniques, and I
 
 This is a repository to showcase skills, share projects and track my progress in Data Analytics / Data Science related topics.
 
-[CV] in pdf.
+[CV](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/Projects/loaf) in pdf.
 
 ## Personal Projects
 ### R Studio

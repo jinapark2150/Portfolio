@@ -1,19 +1,14 @@
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 #data set
-```{r}
 c1<-c(551,457,450,731,499,632)
 c2<-c(595,580,508,583,633,517)
 c3<-c(639,615,511,573,648,677)
 c4<-c(417,449,517,438,415,555)
 c5<-c(563,631,522,613,656,679)
-```
-```{r}
+
 type=c(rep("1",6), rep("2",6), rep("3",6), rep("4",6), rep("5",6)) 
 weight=c(c1,c2,c3,c4,c5)
 dataA=data.frame(type,weight)
-```
+
 
 
 #visualizing data

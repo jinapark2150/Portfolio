@@ -18,5 +18,23 @@ This is a repository to showcase skills, share projects and track my progress in
 
 
 ## Group Projects
-#### R Studio
-* Description :
+### R Studio
+#### Optimizing Concrete Aggregate Selection for Moisture Absorption
+##### Purpose:
+* Determined the most effective concrete aggregate type in terms of moisture absorption, contributing to enhanced material performance in construction projects.
+##### Role:
+* Led a team by assigning roles to members, meticulously managing schedules to ensure optimal meeting attendance, and maintaining a keen focus on project details.
+##### Key Responsibilities:
+* Gathered raw data on various concrete aggregate types.
+* Developed and implemented R scripts to analyze data, including checking normality, assessing homogeneity of variances, conducting one-way ANOVA tests, and employing visualizations such as normal QQ plots and residual vs. predicted graphs.
+* Translated outcomes of each technique into comprehensive presentation slides for effective communication.
+##### Technologies Used:
+* Checking normality of each concrete mixture type.
+* Verifying homogeneity of variances.
+* Conducting one-way ANOVA tests for statistical analysis.
+* Generating normal QQ plots and residual vs. predicted graphs for data visualization.
+* Applied Tukey's HSD test for multiple comparisons of means.
+##### Significant Achievements or Outcomes:
+* Despite significant variation within groups for type 1 aggregate, successfully satisfied the normality assumption.
+* Identified type 4 aggregate as having the least moisture absorption, offering a valuable alternative for construction applications.
+* Provided insights into the suitability of various aggregate types, facilitating informed decision-making in construction material selection.

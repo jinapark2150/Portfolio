@@ -31,7 +31,7 @@ This is a repository to showcase skills, share projects and track my progress in
   + Found that Types 3 and 5 are not suitable alternatives due to significant differences.
   + Found that Types 1 and 2 can be considered as alternatives, despite Type 1 exhibiting great variation within groups; normality assumption is satisfied.
 
-#### [The Effect of Different Doses of Caffeine on Endurance Performance]()
+#### [The Effect of Different Doses of Caffeine on Endurance Performance](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/The%20Effect%20of%20Different%20Doses%20of%20Caffeine%20on%20Endurance%20PerformanceR)
 * **Description**: Conducted an analysis to investigate the correlation between caffeine dosage and individuals' endurance performance.
 * **Roles and Responsibilities**:
   + Planned methodology to implement and executed R scripts, employing advanced statistical techniques with a focus on precision and reliability.

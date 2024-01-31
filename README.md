@@ -8,7 +8,7 @@ In my free time, I enjoy exploring new data analysis tools and techniques, and I
 
 This is a repository to showcase skills, share projects and track my progress in Data Analytics / Data Science related topics.
 
-[CV](https://github.com/jinapark2150/Personal-Projects/blob/main/Project1%20-%20FINAL.R) in pdf.
+[CV] in pdf.
 
 ## Personal Projects
 #### R Studio
@@ -19,7 +19,7 @@ This is a repository to showcase skills, share projects and track my progress in
 
 ## Group Projects
 ### R Studio
-> Optimizing Concrete Aggregate Selection for Moisture Absorption
+> [Optimizing Concrete Aggregate Selection for Moisture Absorption](https://github.com/jinapark2150/Personal-Projects/blob/main/Project1%20-%20FINAL.R)
 * Purpose:
   + Determined the most effective concrete aggregate type in terms of moisture absorption, contributing to enhanced material performance in construction projects.
 * Role:

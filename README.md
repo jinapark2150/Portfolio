@@ -34,7 +34,7 @@ This is a repository to showcase skills, share projects and track my progress in
   + Conducting one-way ANOVA tests for statistical analysis.
   + Generating normal QQ plots and residual vs. predicted graphs for data visualization.
   + Applied Tukey's HSD test for multiple comparisons of means.
-* Significant Achievements or Outcomes:
+* Outcomes:
   + Despite significant variation within groups for type 1 aggregate, successfully satisfied the normality assumption.
   + Identified type 4 aggregate as having the least moisture absorption, offering a valuable alternative for construction applications.
   + Provided insights into the suitability of various aggregate types, facilitating informed decision-making in construction material selection.

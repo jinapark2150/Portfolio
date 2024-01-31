@@ -25,24 +25,21 @@ This is a repository to showcase skills, share projects and track my progress in
 * Key Responsibilities:
   + Developed and implemented R scripts to analyze data, including checking normality, assessing homogeneity of variances, conducting one-way ANOVA tests, and employing visualizations such as normal QQ plots and residual vs. predicted graphs.
   + Translated outcomes of each technique into comprehensive presentation slides for effective communication.
-* Technologies Used:
-  + Various statistical methods, including normality checks, homogeneity assessments, one-way ANOVA tests, normal QQ plot graphs, residual vs. predicted graphs, and Tukey's HSD test.
+* Technologies Used: Normality checks, homogeneity assessments, one-way ANOVA tests, normal QQ plot graphs, residual vs. predicted graphs, and Tukey's HSD test.
 * Conclusions:
   + Identified Type 4 as the most effective concrete aggregate with the least moisture absorption.
   + Found that Types 3 and 5 are not suitable alternatives due to significant differences.
   + Found that Types 1 and 2 can be considered as alternatives, despite Type 1 exhibiting great variation within groups; normality assumption is satisfied.
 
-#### [Optimizing Concrete Aggregate Selection for Moisture Absorption](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/c35875dad891693cb9c16fef21036cdb7c81f604/Optimizing%20Concrete%20Aggregate%20Selection%20for%20Moisture%20Absorption.R)
-* Purpose: Determined the most effective concrete aggregate type in terms of moisture absorption, contributing to enhanced material performance in construction projects.
-* Role: Led a team by assigning roles to members, coordinating meeting schedules, distributing reference materials, and maintaining a keen focus on project details.
-* Key Responsibilities:
-  + Developed and implemented R scripts to analyze data, including checking normality, assessing homogeneity of variances, conducting one-way ANOVA tests, and employing visualizations such as normal QQ plots and residual vs. predicted graphs.
-  + Translated outcomes of each technique into comprehensive presentation slides for effective communication.
-* Technologies Used:
-  + Various statistical methods, including normality checks, homogeneity assessments, one-way ANOVA tests, normal QQ plot graphs, residual vs. predicted graphs, and Tukey's HSD test.
+#### [The Effect of Different Doses of Caffeine on Endurance Performance]()
+* Description: Conducted an analysis to investigate the correlation between caffeine dosage and individuals' endurance performance.
+* Roles and Responsibilities:
+  + Planned methodology to implement and executed R scripts, employing advanced statistical techniques with a focus on precision and reliability.
+  + Collaborated with team members to translate outcomes of each technique used.
+* Technologies Used: Normality checks, homogeneity assessments, two-way ANOVA tests, normal QQ plot graphs, residual vs. predicted graphs, and Tukey's HSD test for comparing doses means.
 * Conclusions:
-  + Identified Type 4 as the most effective concrete aggregate with the least moisture absorption.
-  + Found that Types 3 and 5 are not suitable alternatives due to significant differences.
-  + Found that Types 1 and 2 can be considered as alternatives, despite Type 1 exhibiting great variation within groups; normality assumption is satisfied.
+  + Established that there is a significant impact of caffeine intake on endurance performance, revealing that caffein effectively improves individuals; endurance capabiltiies.
+  + Dosage of caffeine may noy be a significant effect, as Treatment 1 (0 mg) showed a marked difference from all other treatments according to the results of the Tukey HSD test.
+  + Individual cyclists played a crucial role, as indicated by smaller p-values, highlighting that endurance performance variations are more pronounced among cyclists themselves. This emphasizes the personalized nature of the impact of caffeine on endurance.
 
 

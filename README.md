@@ -42,4 +42,19 @@ This is a repository to showcase skills, share projects and track my progress in
   + Dosage of caffeine may noy be a significant effect, as Treatment 1 (0 mg) showed a marked difference from all other treatments according to the results of the Tukey HSD test.
   + Individual cyclists played a crucial role, as indicated by smaller p-values, highlighting that endurance performance variations are more pronounced among cyclists themselves. This emphasizes the personalized nature of the impact of caffeine on endurance.
 
-
+#### [CO2 Exchange Under Wet and Dry Conditions Over Time](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/The%20Effect%20of%20Different%20Doses%20of%20Caffeine%20on%20Endurance%20PerformanceR)
+* **Description**: Investigated the optimal conditions for efficient carbon dioxide concentration exchange in plants, aiming to identify key factors influencing the process.
+* **Roles and Responsibilities**:
+  + Formulated and executed the methodology, ensuring precision and reliability in the research process.
+  + Utilized R scripts and applied advanced statistical techniques, focusing on Timepoint-treatment interaction plots and box plots, followed by ANOVA tests for within-treatment and within-timepoint comparisons.
+  + Collaborated with team members to interpret and communicate outcomes derived from each statistical technique.
+* **Technologies Used**:
+  + Timepoint-treatment interaction plots and box plots
+  + ANOVA tests comparing within treatments, within timepoints, and interactions between them
+  + Model adequacy checks, including assessments for normality and variance homogeneity
+  + Multiple comparisons for detailed analysis of treatment and timepoint variations
+* **Conclusions**:
+  + The ANOVA test highlighted significant differences in treatments, timepoints, and their interactions.
+  + Under dry conditions, treatments T1 and T4 exhibited notable distinctions.
+  + In wet conditions, all treatments, except for T1 and T2, displayed significant differences through multiple comparisons.
+  + Notably, plants at Timepoint T2 under wet conditions appeared to be the most efficient based on the interaction plot, although no significant difference was found between T1 and T2. Consequently, it can be concluded that either T1 or T2 under wet conditions is potentially the most efficient in terms of CO2 concentration exchange.

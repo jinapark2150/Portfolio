@@ -78,7 +78,7 @@ This is a repository to showcase skills, share projects and track my progress in
   + In wet conditions, all treatments, except for T1 and T2, displayed significant differences through multiple comparisons.
   + Notably, plants at Timepoint T2 under wet conditions appeared to be the most efficient based on the interaction plot, although no significant difference was found between T1 and T2. Consequently, it can be concluded that either T1 or T2 under wet conditions is potentially the most efficient in terms of CO2 concentration exchange.
 
-#### [Monte Carlo Simulation to Identify Independence and t-distribution]
+#### [Monte Carlo Simulation to Identify Independence and t-distribution](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/Monte%20Carlo%20Simulation%20to%20Identify%20Independence%20and%20t-distribution.pdf)
 * **Purpose**: Explored the properties of the t-distribution and implemented a Monte Carlo simulation to analyze the independence between variables Z and U under specific conditions
 * **Roles and Responsibilities**:
   + Applied knowledge of Student's theorem and properties of the t-distribution to assess the independence of Z and U.

@@ -1,16 +1,3 @@
----
-title: "STAT 429 Group Project - Multiple Linear Regression of WHO Life Expectancy
-  Data"
-author:
-- "Jina Park - 30129680"
-- "Scott Holden - 30051473"
-- "Leigh Murray - 30075588"
-date: "`r Sys.Date()`"
-output:
-  pdf_document: default
-  html_document: default
----
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 

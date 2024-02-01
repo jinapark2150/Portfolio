@@ -12,7 +12,7 @@ This is a repository to showcase skills, share projects and track my progress in
 
 ## Personal Projects
 ### R Studio
-#### [Optimizing Concrete Aggregate Selection for Moisture Absorption]()
+#### [Optimizing Concrete Aggregate Selection for Moisture Absorption](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/Effects%20of%20Latitude%20and%20Elevation%20on%20Temperature.pdf)
 * **Description**:
 * **Techonologies used**:
 * **Outcomes**:

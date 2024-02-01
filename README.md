@@ -89,3 +89,9 @@ This is a repository to showcase skills, share projects and track my progress in
 #### [Multiple Linear Regression of WHO Life Expectancy Data](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/Multiple%20Linear%20Regression%20of%20WHO%20Life%20Expectancy%20Data.rmd)
 * **Description**: Using 15 years of WHO data from 193 countries, this project employed advanced statistical techniques to identify key determinants of life expectancy. Vaccination rates emerged as the most influential factor in the square root transformed model. Roles included methodology planning, R script execution, and collaborative outcome translation within the team.
 * **Techniques**: Data cleaning,Data Visualization, Model Development, Model Adequacy Check, Model Selection on BIC, Model Transformation, ANOVA Test, Multiple Linear Regression
+
+#### [Estimates of Undergraduate Expenses at University of Calgary]()
+* **Description**: Using 15 years of WHO data from 193 countries, this project employed advanced statistical techniques to identify key determinants of life expectancy. Vaccination rates emerged as the most influential factor in the square root transformed model. Roles included methodology planning, R script execution, and collaborative outcome translation within the team.
+* **Techniques**: Data cleaning,Data Visualization, Model Development, Model Adequacy Check, Model Selection on BIC, Model Transformation, ANOVA Test, Multiple Linear Regression
+
+

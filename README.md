@@ -95,7 +95,7 @@ This is a repository to showcase skills, share projects and track my progress in
 
 * **Techniques**: Data cleaning, Data Visualization, Model Development, Ratio estimation, Regression estimation, Relative Efficiency, Bootstraps
 
-#### Prostate Cancer Competing Risk Analysis
+#### [Prostate Cancer Competing Risk Analysis](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/Prostate%20Cancer%20Competing%20Risk%20Analysis.pdf)
 
 #### Analysis of Competing Risk on Melanoma
 

@@ -97,10 +97,11 @@ click on the name of the projects to see my works. Some are raw codes I used for
 #### [Prostate Cancer Competing Risk Analysis](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/Prostate%20Cancer%20Competing%20Risk%20Analysis.pdf)
 * **Description**: 
 
-* **Techniques**: Data cleaning, Data Visualization, Model Development, Ratio estimation, Regression estimation, Relative Efficiency, Bootstraps
+* **Techniques**: 
 
 
 #### [Analysis of Competing Risk on Melanoma](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/Analysis%20of%20Competing%20Risk%20on%20Melanoma.pdf)
-* **Description**: 
+* **Description**: Analyzed melanoma survival data, comparing methodologies such as cause-specific hazard regression and Cox Proportional Hazards model.
 
-* **Techniques**: Data cleaning, Data Visualization, Model Development, Ratio estimation, Regression estimation, Relative Efficiency, Bootstraps
+
+* **Techniques**: 

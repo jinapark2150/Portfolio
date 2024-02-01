@@ -16,6 +16,10 @@ This is a repository to showcase skills, share projects and track my progress in
 * **Description**: Utilized Bayesian inference to investigate the impact of latitude and elevation on temperature in 16 Texas counties. Collected and analyzed data to establish the relationship between these factors, enabling temperature forecasts.
 * **Techniques**: Data Visualization, Ordinary Least Squares (OLS) estimator, Model Selection based on AIC, Maximum Likelihood Estimation, Metropolis Algorithm
 
+#### [Analysis of Diabetes Risk Factors]
+* **Description**: This study delves into diabetes, a rapidly increasing health concern with severe consequences. Using data from the National Institute of Diabetes and Digestive and Kidney Diseases on 768 Pima Indian women aged at least 21, advanced statistical techniques were employed. Models were developed through AIC and BIC methods, with variable elimination based on p-values. ANOVA tests, marginal model plots, and multicollinearity checks refined the models, highlighting diabetes pedigree function, BMI, glucose concentration, and insulin concentration as the most influential factors. Diabetes pedigree function exhibited the strongest impact, while insulin concentration had the least effect on diabetes risk.
+* **Techniques**: Data cleaning, Data Visualization, Model Development, Model Adequacy Check, Model Selection on AIC and BIC, ANOVA Test, Logistic Regression.
+
 
 
 ### Python
@@ -72,7 +76,7 @@ This is a repository to showcase skills, share projects and track my progress in
   + In wet conditions, all treatments, except for T1 and T2, displayed significant differences through multiple comparisons.
   + Notably, plants at Timepoint T2 under wet conditions appeared to be the most efficient based on the interaction plot, although no significant difference was found between T1 and T2. Consequently, it can be concluded that either T1 or T2 under wet conditions is potentially the most efficient in terms of CO2 concentration exchange.
 
-#### [Monte Carlo Simulation to Identify Independence and t-distribution]()
+#### [Monte Carlo Simulation to Identify Independence and t-distribution]
 * **Purpose**: Explored the properties of the t-distribution and implemented a Monte Carlo simulation to analyze the independence between variables Z and U under specific conditions
 * **Roles and Responsibilities**:
   + Applied knowledge of Student's theorem and properties of the t-distribution to assess the independence of Z and U.
@@ -80,4 +84,6 @@ This is a repository to showcase skills, share projects and track my progress in
   + Collaborated with team members to interpret and communicate the outcomes derived from the simulation and theoretical analyses.
 * **Techniques**: Monte Carlo simulation
 
-
+#### [Multiple Linear Regression of WHO Life Expectancy Data]
+* **Description**: Using 15 years of WHO data from 193 countries, this project employed advanced statistical techniques to identify key determinants of life expectancy. Vaccination rates emerged as the most influential factor in the square root transformed model. Roles included methodology planning, R script execution, and collaborative outcome translation within the team.
+* **Techniques**: Data cleaning,Data Visualization, Model Development, Model Adequacy Check, Model Selection on BIC, Model Transformation, ANOVA Test, Multiple Linear Regression

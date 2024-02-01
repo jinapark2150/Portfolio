@@ -9,17 +9,15 @@ enterprise = 'E'
 klingon = 'K'
 star = '*'
 k_energy, e_energy = 50, 125 
-map_row, map_col = 9, 12 #grid 사이즈용 변수
-old_e_row, old_e_col = 0, 0 #옛날 enterprise 좌표 저장용 변수
+map_row, map_col = 9, 12 
+old_e_row, old_e_col = 0, 0 
 
-random_coordinates = [] #나는 star 10개, klingon 4개, enterprise 1개, 총 15개를 한번에 랜덤으로 다 뽑아놓고 여기다가 저장했어
-star_location = [] #star 위치들 저장용 변수
-klingon_location = {} #klingon 위치 저장용 변수
-enterprise_location = {} #enterprise 위치 저장용 변수
+random_coordinates = [] 
+star_location = [] 
+klingon_location = {}
+enterprise_location = {} 
 
 #abbreviated commands dictionary
-#여기에 destruct도 추가해놨어
-#코드 맨 밑에보면 cmd input를 잘못치면 while loop안에서 제대로 입력할때까지 다시 입력하는 식으로 해놨는데 destruct랑 d도 'short' 딕셔너리안에 넣어놓아야 destruct랑 d를 인식해서!
 short = {
     'q':    'quit',
     'n':    'north',
@@ -30,7 +28,6 @@ short = {
 }
 
 
-#이 메소드가 star 10개, klingon 4개, enterprise 1개, 총 15개를 for loop에서 한번에 랜덤으로 다 뽑아서 'random_coordinates'라는 리스트에 일단 다 저장해놨어!
 def random_star_klingon_enterprise():
     # make 15 random coordinates
     for i in range(15):
@@ -41,42 +38,29 @@ def random_star_klingon_enterprise():
                 break;
         random_coordinates.append((row, col))
 
-
-#이거가 앞에서 'random_coordinates'리스트에서 총 15개중에서 앞에 10개는 star위치로 정하는 코드! 'star_location'에 저장해놨어
 def random_star():
     # make 10 stars
     for i in range(10):
         star_location.append(random_coordinates[i])
 
 
-#마찬가지로 'random_coordinates' 리스트에서 총 15개중에 10번째부터~13번째 4개를 klingon 위치로 저장하는데
-#너가 만들어논 'klingon_location' 딕셔너리이용해서 energy랑 같이 저장하는게 좋은거 같아서 그렇게 저장!
 def random_klingon():
     # make 4 klingons
     for i in range(10,14):
         klingon_row, klingon_col = random_coordinates[i]
         klingon_location[(klingon_row, klingon_col)]= k_energy
 
-
-#마지막 'random_coordinates' 리스트에서 마지막 좌표를 enterprise 위치로
-#마찬가지로 'enterprise_location'라는 딕셔너리로 energy랑 같이 저장.
 def random_enterprise():
     # make 1 enterprise
     enterprise_row, enterprise_col = random_coordinates[14]
     enterprise_location[(enterprise_row, enterprise_col)] = e_energy
 
-
-#이거는 딱 처음에 empty, star, klingon, enterprise 모양들을 'map'에다가 저장하는 코드 "한번만 돌릴에정"
-#맨 밑에 'game_loop()라는 코드보면 map = []라고 메트릭스 만들어서 지금 make_grid(map)코드에서 그 메트릭스 안에 모양들 넣는 코드야
-#'make_grid()'랑 'update_grid()'랑 따로 만든게 처음에 empty, star, klingon, enterprise 다 넣어둔거 만들고(이게 make_grid())
-# 게임실행하면서는 사실상 E랑 K만 움직이니까 바로 밑에 메소드(update_grid())에서 실행중에 E,K위치 변화 그걸 다뤄줄거야
 def make_grid(map):
-    #위에 만든 메소드들을 여기서 돌려!
-    random_star_klingon_enterprise() #랜덤 좌표 15개 뽑고
-    random_star() #앞에 10개 star위치로
-    random_klingon() #그다음 4개 klingon위치로
-    random_enterprise() #마지막꺼 enterprise위치로
-    for col in range(9): #이 뒤부터는 너가 쓴거랑 같아! 굿굿!
+    random_star_klingon_enterprise() 
+    random_star() 
+    random_klingon() 
+    random_enterprise() 
+    for col in range(9):
         map.append([empty] * 12)
     for i in star_location:
         s_row, s_col = i
@@ -89,26 +73,23 @@ def make_grid(map):
         map[e_row][e_col] = enterprise
 
 
-#이거는 이제 밑에 'game_loop()'에서 while(True): 여기안에서 "계속 돌아갈거야"
 def update_grid(map):
     checker = False
-    old_e_row, old_e_col = (0,0) #방향 움직이기 전 enterprise위치
-    for i in klingon_location: #klingon 그려넣는거는 위에꺼랑 같은 방법으로! klingon_location에 위치로 등록된 애들은 다 K로 모양 저장
+    old_e_row, old_e_col = (0,0) 
+    for i in klingon_location: 
         k_row, k_col = i
         map[k_row][k_col] = klingon
-    for i, j in enterprise_location.items(): #E는 좀 다르게! 왜냐면 만약 갈수 있어서 움직이고나면 전에 E모양은 사라져야하니까..! 여기서 i는 key, j는 values 즉 i는 enterprise좌표, j는 그좌표 에너지값!
-        if j == 0: #만약 에너지값이 0이면 (이거는 내가 밑에서 움직일수 있으면 움직이기 전 좌표의 에너지값을 0으로하고, 움직이는 좌표는 추가하는식으로.. 밑에가서 더 설명해줄게)
-            old_e_row, old_e_col = i #옛날 좌표를 i로 부터 받아와서 저장하고
-            map[old_e_row][old_e_col] = empty #그 옛날좌표 모양은 empty로 바꾸기!
-            checker = True #옛날좌표 모양만 없애는게 아니라 enterprise_location 딕셔너리에서 옛날좌표도 지워줘야해서 일단 표시를 해두고!
+    for i, j in enterprise_location.items(): 
+        if j == 0: 
+            old_e_row, old_e_col = i 
+            map[old_e_row][old_e_col] = empty 
+            checker = True 
         else:
-            e_row, e_col = i #에너지값이 0이아니면 그럼 에너지가 있으니까 E를 표시해줘야니까
+            e_row, e_col = i 
             map[e_row][e_col] = enterprise
-    if checker: #옛날좌표 지워야할 표시가 있으면?
-        del enterprise_location[(old_e_row, old_e_col)] #옛날 좌표 지우기
+    if checker: 
+        del enterprise_location[(old_e_row, old_e_col)] 
 
-
-#너가 써논 그리드 프린트하는 코드
 def print_grid(map):
     # print map
     for i in map:
@@ -117,9 +98,6 @@ def print_grid(map):
         print()
 
 
-#이 메소드는 방향키에 따라 새로운 좌표가 뭐가되는지 구해주는 메소드! 그래서 return에 new_row, new_col, old_row, old_col
-#여기서는 그냥 새로운 좌표만 구해줘
-#x,y라쓰니까 헷갈려서 row, column으로 썼다...!
 def new_enterprise(direction):
     [(old_row, old_col)] = enterprise_location
     new_row, new_col = old_row, old_col
@@ -133,18 +111,8 @@ def new_enterprise(direction):
         new_col = old_col + 1
     return new_row, new_col, old_row, old_col
 
-
-#여기서 실질적으로 enterprise E좌표를 옮겨주는 메소드야
-#더 간단하게 쓸수 있을거 같은데 대가리아파서 그냥 뒀어...
-#움직이는 상황 리스트
-# 1.E가 근처 K한테 에너지 뺏기고 움직이므
-# 2.E가 근처 K한테 에너지 뺏기고 가려는 방향에 K가 먹어버려
-# 3.E가 근처 K한테 에너지 뺏기고 가려는 방향에 에너지가 있는 K가 있어서 못움직여
-# 4.E가 근처 K한테 에너지 손실없이 (근처에 K가 없거나 아님 확률로써 K가 공격실패해서 무튼)가로막는 K도 없고 전진
-# 5.E가 근처 K한테 에너지 손실도 없고 (근처에 K가 없거나 아님 확률로써 K가 공격실패해서 무튼) 앞에 가로막는 K가 먹을 수 있다
-# 6.E가 근처 K한테 에너지 손실은 없는데 (근처에 K가 없거나 아님 확률로써 K가 공격실패해서 무튼) K 못먹어
 def move_enterprise(direction):
-    new_row, new_col, old_row, old_col = new_enterprise(direction) #일단 전후 좌표 받아놓고
+    new_row, new_col, old_row, old_col = new_enterprise(direction) 
     key = (new_row, new_col) #새로 움직일 좌표를 key라 저장하고
     energy_reduced = near_klingon_energy(direction) #이거는 밑에 'near_klingon_energy()'라는 메소드에서 근처에 K있으면 에너지 깎이는 값이 얼마인지 받아와서 저장하고
     if energy_reduced != 0: #만약 깎이는 에너지가 있는데

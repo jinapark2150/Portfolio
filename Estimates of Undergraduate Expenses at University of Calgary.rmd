@@ -1,0 +1,198 @@
+```{r}
+info = read.csv(file ="~/Downloads/finalproject.csv")
+info
+```
+
+
+# Tuition for per course
+```{r}
+N.total = 26000
+N.int = 2600
+N.dom = 23400
+
+n.int = 7
+n.dom = 38
+n.total = n.int+n.dom
+
+dom.t = data.frame(filter(info, Type=="Domestic"))
+domt.percourse = (dom.t$Tuition-149.31)/dom.t$Course
+mean.dom = mean(domt.percourse)
+sd.dom = sd(domt.percourse)
+
+int.t = data.frame(filter(info, Type=="International"))
+int.percourse = (int.t$Tuition-149.31)/int.t$Course
+mean.int = mean(int.percourse)
+sd.int = sd(int.percourse)
+
+mean.tuition = ((N.int/N.total)*mean.int)+((N.dom/N.total)*mean.dom)
+mean.tuition * 5 +149.31
+
+var.int = ((N.int/N.total)^2)*((N.int-n.int)/N.int)*(sd.int^2/n.int)
+var.dom = ((N.dom/N.total)^2)*((N.dom-n.dom)/N.dom)*(sd.dom^2/n.dom)
+var.tuition = var.int+var.dom
+
+moe.tuition = qt(0.975,n.total - 2) * sqrt(var.tuition)
+
+lb.tuition = mean.tuition - moe.tuition
+ub.tuition = mean.tuition + moe.tuition
+c(lb.tuition,ub.tuition) * 5 +149.31
+
+ggplot(data=info, aes(x = TperC))+ geom_histogram(col= "black", fill="blue",binwidth = 400, na.rm = TRUE) + xlab("Tuition in CAD") +ggtitle("Bar graph for amout of Tuition paid per course")
+```
+
+```{r}
+#Food
+mean.food = mean(info$Food)
+mean.food
+me.food = qt(0.975,44)*sqrt(((sd(info$Food)^2)/45))*((N.total-45)/N.total)
+lb.food = mean.food - me.food
+ub.food = mean.food + me.food
+c(lb.food,ub.food)
+ggplot(data=info , aes(x = Food))+ geom_histogram(col= "black", fill="blue",binwidth = 30, na.rm = TRUE) + xlab("Amount spent") +ggtitle("Bar graph for monthly amount of money spent on food deliveries/groceries")
+
+#Housing
+mean.housing = mean(info$Housing)
+mean.housing
+me.housing= qt(0.975,44)*sqrt(((sd(info$Housing)^2)/45))*((N.total-45)/N.total)
+lb.housing = mean.housing - me.housing
+ub.housing = mean.housing + me.housing
+c(lb.housing,ub.housing)
+ggplot(data=info , aes(x = Housing))+ geom_histogram(col= "black", fill="blue",binwidth = 150, na.rm = TRUE) + xlab("Amount spent") +ggtitle("Bar graph for monthly amount spent on Housing")
+
+#Transport
+mean.transport = mean(info$Transport)
+mean.transport
+me.transport= qt(0.975,44)*sqrt(((sd(info$Transport)^2)/45))*((N.total-45)/N.total)
+lb.transport = mean.transport - me.transport
+ub.transport = mean.transport + me.transport
+c(lb.transport,ub.transport)
+ggplot(data=info , aes(x = Transport))+ geom_histogram(col= "black", fill="blue",binwidth = 30, na.rm = TRUE) + xlab("Amount spent") +ggtitle("Bar graph for monthly amount of money spent on Transportation")
+
+#Entertainment
+mean.ent = mean(info$Ent)
+mean.ent
+me.ent= qt(0.975,44)*sqrt(((sd(info$Ent)^2)/45))*((N.total-45)/N.total)
+lb.ent = mean.ent - me.ent
+ub.ent = mean.ent + me.ent
+c(lb.ent,ub.ent)
+ggplot(data=info , aes(x = Ent))+ geom_histogram(col= "black", fill="blue",binwidth = 90, na.rm = TRUE) + xlab("Amount spent") +ggtitle("Bar graph for monthly amount of money spent on Entertainment")
+
+#Electronics
+mean.ele = mean(info$Ele)
+mean.ele
+me.ele= qt(0.975,44)*sqrt(((sd(info$Ele)^2)/45))*((N.total-45)/N.total)
+lb.ele = mean.ele - me.ele
+ub.ele = mean.ele + me.ele
+c(lb.ele,ub.ele)
+ggplot(data=info , aes(x = Ele))+ geom_histogram(col= "black", fill="blue",binwidth = 200, na.rm = TRUE) + xlab("Amount spent") +ggtitle("Bar graph for amount of money spent on Electronics")
+
+#Textbook
+mean.text = mean(info$Textbook)
+mean.text
+me.text= qt(0.975,44)*sqrt(((sd(info$Textbook)^2)/45))*((N.total-45)/N.total)
+lb.text = mean.text - me.text
+ub.text = mean.text + me.text
+c(lb.text,ub.text)
+ggplot(data=info , aes(x = Textbook))+ geom_histogram(col= "black", fill="blue",binwidth = 100, na.rm = TRUE) + xlab("Amount spent") +ggtitle("Bar graph for amount of money spent on Textbooks")
+
+#Material
+mean.mat = mean(info$Material)
+mean.mat
+me.mat= qt(0.975,44)*sqrt(((sd(info$Material)^2)/45))*((N.total-45)/N.total)
+lb.mat = mean.mat - me.mat
+ub.mat = mean.mat + me.mat
+c(lb.mat,ub.mat)
+ggplot(data=info , aes(x = Material))+ geom_histogram(col= "black", fill="blue",binwidth = 200, na.rm = TRUE) + xlab("Amount spent") +ggtitle("Bar graph for amount of money spent on Material")
+```
+
+# Total for 4 years (40 courses)
+```{r}
+a = mean.tuition * 40 + 149.31*8 # 8 semester
+i = c(lb.tuition,ub.tuition) * 40 + 149.31*8
+
+b = mean.text * 8
+ii = c(lb.text,ub.text) *8
+
+c = mean.mat * 8 
+iii = c(lb.mat,ub.mat) *8
+
+d = mean.food * 48
+iv = c(lb.food,ub.food) *48
+
+e = mean.housing * 48
+v = c(lb.housing,ub.housing)*48
+
+f = mean.transport * 48
+vi = c(lb.transport,ub.transport)*48
+
+g = mean.ent * 48
+vii = c(lb.ent,ub.ent)*48
+
+h = mean.ele
+viii = c(lb.ele, ub.ele)
+
+sum.means = a+b+c+d+e+f+g+mean.ele
+sum.bounds = i+ii+iii+iv+v+vi+vii+c(lb.ele, ub.ele)
+sum.means
+sum.bounds
+```
+
+#How many responses do we need SRS
+```{r}
+N.total = 26000
+ssize = 45
+samprop = 7/45
+
+n.for_proportion <- function(N,moe, conflevel,p) # Calculating min. sample size using p
+{
+  pop.var <- p*(1-p) # Computes the var of Bernoulli r.v.
+  numerator <- N*(pop.var) # numerator of the formula
+  cumulative.prob <- 1-(1-conflevel)/2 # Z value
+  z.value <- qnorm(cumulative.prob) # cumulative probability to the left
+  denominator <- (N-1)*((moe/z.value)^2)+ (pop.var) #denominator calculation for the formula
+  n.value <- ceiling(numerator/denominator) #Rounds up the result
+  n.value
+}
+n.for_proportion(N.total, 0.05, 0.95, samprop)
+```
+
+#How many responses do we need Stratified
+```{r}
+Nis = c(2600, 23400)
+ais = c(0.1,0.9)
+sigmais = c(sd.int, sd.dom)
+moe.response = 30
+numerator = sum(((Nis^2)*(sigmais^2))/(ais))
+denom.1= (sum(Nis)^2)*(moe.response/qnorm(0.975))^2
+denom.2 = sum(Nis*sigmais^2)
+n.resp = numerator/(denom.1 + denom.2)
+
+na.int = ais[1]*n.resp
+na.dom = ais[2]*n.resp
+floor(c(na.int,na.dom))
+cat("The overall sample size is", ceiling(na.int + na.dom))
+```
+
+# Bootstrap
+```{r}
+library(boot)
+dom.t = dom.t %>%
+  mutate(TperC = dom.t$Tuition/dom.t$Course)
+
+#Before bootstrap
+ggplot(data=dom.t, aes(sample=TperC)) + stat_qq(size=2, col='blue') + stat_qq_line(col='red') + ggtitle("Normal Probability Plot of Mean tuition - Domestic")
+
+resamp.dom <- 1000 #set the number of resamples to 5000
+n.bootdom <- length(dom.t$TperC-149.31) #set sample size to n = 38, 149 is the unavoidable academic fees that you pay once per semester.
+dom.bootmean <- numeric(resamp.dom) #create a vector to hold the 5000 different values of the bootstrap statistic (mean)
+dom.bootsd <- numeric(resamp.dom) #a vector to hold the 5000 values of the sample standard deviation, a different bootstrap statistic
+for(i in 1:resamp.dom) #create a for loop 
+{   dom.bootdata <-sample(dom.t$TperC-149.31, n.dom, replace=TRUE) 
+    dom.bootmean[i] <- mean(dom.bootdata) #compute the mean of the data in bootdata
+    dom.bootsd[i] <- sd(dom.bootdata) #compute the standard devaition of the data in bootdata
+} 
+
+boot.dom = data.frame(dom.bootmean, dom.bootsd)
+favstats(dom.bootmean, data=boot.dom)
+ggplot(data=boot.dom, aes(sample=dom.bootmean)) + stat_qq(size=2, col='blue') + stat_qq_line(col='red') + ggtitle("Normal Probability Plot of Bootstrap Mean - Domestic")
+```

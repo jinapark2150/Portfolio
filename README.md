@@ -8,7 +8,7 @@ In my free time, I enjoy exploring new data analysis tools and techniques, and I
 
 This repository serves as a showcase for my skills, a platform to share projects, and a tool to track my progress in Data Analytics/Data Science. Click on the project names below to explore my works; some are hyperlinks to the raw codes I used, while others are PDF files presenting the projects.
 
-[CV](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/Projects/loaf) in pdf.
+My CV can be found here in [pdf](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/CV.pdf).
 
 ## Personal Projects
 ### R

@@ -68,7 +68,7 @@ click on the name of the projects to see my works. Some are raw codes I used for
   + Collaborated with team members to interpret and communicate outcomes derived from each statistical technique.
 * **Techniques**:
   + Timepoint-treatment interaction plots and box plots
-  + ANOVA tests comparing within treatments, within timepoints, and interactions between them
+  + ANOVA test to compare treatments, time-points, and interactions between them
   + Model adequacy checks, including assessments for normality and variance homogeneity
   + Multiple comparisons for detailed analysis of treatment and timepoint variations
 * **Conclusions**:
@@ -76,7 +76,7 @@ click on the name of the projects to see my works. Some are raw codes I used for
   + Under dry conditions, treatments T1 and T4 exhibited notable distinctions.
   + In wet conditions, all treatments, except for T1 and T2, displayed significant differences through multiple comparisons.
   + Notably, plants at Timepoint T2 under wet conditions appeared to be the most efficient based on the interaction plot, although no significant difference was found between T1 and T2. Consequently, it can be concluded that either T1 or T2 under wet conditions is potentially the most efficient in terms of CO2 concentration exchange.
-  + 
+
 #### [Monte Carlo Simulation to Identify Independence and t-distribution](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/Monte%20Carlo%20Simulation%20to%20Identify%20Independence%20and%20t-distribution.pdf)
 * **Purpose**: Explored the properties of the t-distribution and implemented a Monte Carlo simulation to analyze the independence between variables Z and U under specific conditions
 * **Roles and Responsibilities**:

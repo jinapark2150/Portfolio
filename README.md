@@ -95,4 +95,7 @@ This is a repository to showcase skills, share projects and track my progress in
 
 * **Techniques**: Data cleaning, Data Visualization, Model Development, Ratio estimation, Regression estimation, Relative Efficiency, Bootstraps
 
+#### Prostate Cancer Competing Risk Analysis
+
+#### Analysis of Competing Risk on Melanoma
 

@@ -8,7 +8,7 @@ empty = '.'
 enterprise = 'E'
 klingon = 'K'
 star = '*'
-k_energy, e_energy = 50, 125 #k랑 e 초기 에너지 변수
+k_energy, e_energy = 50, 125 
 map_row, map_col = 9, 12 #grid 사이즈용 변수
 old_e_row, old_e_col = 0, 0 #옛날 enterprise 좌표 저장용 변수
 

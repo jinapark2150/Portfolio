@@ -6,8 +6,7 @@ During my studies, I honed my ability to work with complex data and developed a 
 
 In my free time, I enjoy exploring new data analysis tools and techniques, and I am always looking for opportunities to expand my knowledge and skills. Whether working on a team or independently, I am driven by the thrill of discovering new insights and the satisfaction of using data to solve complex problems.
 
-This is a repository to showcase skills, share projects, and track my progress in Data Analytics / Data Science related topics.
-click on the name of the projects to see my works. Some are raw codes I used for projects and some are pdf files of projects
+This repository serves as a showcase for my skills, a platform to share projects, and a tool to track my progress in Data Analytics/Data Science. Click on the project names below to explore my works; some are hyperlinks to the raw codes I used, while others are PDF files presenting the projects.
 
 [CV](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/Projects/loaf) in pdf.
 

@@ -91,11 +91,17 @@ This is a repository to showcase skills, share projects and track my progress in
 * **Techniques**: Data cleaning, Data Visualization, Model Development, Model Adequacy Check, Model Selection on BIC, Model Transformation, ANOVA Test, Multiple Linear Regression
 
 #### [Estimates of Undergraduate Expenses at University of Calgary](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/Estimates%20of%20Undergraduate%20Expenses%20at%20University%20of%20Calgary.rmd)
-* **Description**: - Designed survey instruments, administered, and cleaned the collected data for comprehensive analysis. Employed bootstrap methodology to enhance precision and reliability of approximations in limited sample size
+* **Description**: Designed survey instruments, administered, and cleaned the collected data for comprehensive analysis. Employed bootstrap methodology to enhance precision and reliability of approximations in limited sample size
 
 * **Techniques**: Data cleaning, Data Visualization, Model Development, Ratio estimation, Regression estimation, Relative Efficiency, Bootstraps
 
 #### [Prostate Cancer Competing Risk Analysis](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/Prostate%20Cancer%20Competing%20Risk%20Analysis.pdf)
+* **Description**: 
 
-#### Analysis of Competing Risk on Melanoma
+* **Techniques**: Data cleaning, Data Visualization, Model Development, Ratio estimation, Regression estimation, Relative Efficiency, Bootstraps
 
+
+#### [Analysis of Competing Risk on Melanoma](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/Analysis%20of%20Competing%20Risk%20on%20Melanoma.pdf)
+* **Description**: 
+
+* **Techniques**: Data cleaning, Data Visualization, Model Development, Ratio estimation, Regression estimation, Relative Efficiency, Bootstraps

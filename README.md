@@ -14,7 +14,7 @@ This is a repository to showcase skills, share projects and track my progress in
 ### R
 #### [Effects of Latitude and Elevation on Temperature](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/Effects%20of%20Latitude%20and%20Elevation%20on%20Temperature.pdf)
 * **Description**: Utilized Bayesian inference to investigate the impact of latitude and elevation on temperature in 16 Texas counties. Collected and analyzed data to establish the relationship between these factors, enabling temperature forecasts.
-* **Technologies Used**: 
+* **Techniques**: Data Visualization, Ordinary Least Squares (OLS) estimator, Model Selection based on AIC, Maximum Likelihood Estimation, Metropolis Algorithm
 
 
 
@@ -38,7 +38,7 @@ This is a repository to showcase skills, share projects and track my progress in
 * **Key Responsibilities**:
   + Developed and implemented R scripts to analyze data, including checking normality, assessing homogeneity of variances, conducting one-way ANOVA tests, and employing visualizations such as normal QQ plots and residual vs. predicted graphs.
   + Translated outcomes of each technique into comprehensive presentation slides for effective communication.
-* **Technologies Used**: Normality checks, homogeneity assessments, one-way ANOVA tests, normal QQ plot graphs, residual vs. predicted graphs, and Tukey's HSD test.
+* **Techniques**: Normality checks, homogeneity assessments, one-way ANOVA tests, normal QQ plot graphs, residual vs. predicted graphs, and Tukey's HSD test.
 * **Conclusions**:
   + Identified Type 4 as the most effective concrete aggregate with the least moisture absorption.
   + Found that Types 3 and 5 are not suitable alternatives due to significant differences.
@@ -49,7 +49,7 @@ This is a repository to showcase skills, share projects and track my progress in
 * **Roles and Responsibilities**:
   + Planned methodology to implement and executed R scripts, employing advanced statistical techniques with a focus on precision and reliability.
   + Collaborated with team members to translate outcomes of each technique used.
-* **Technologies Used**: Normality checks, homogeneity assessments, two-way ANOVA tests, normal QQ plot graphs, residual vs. predicted graphs, and Tukey's HSD test for comparing doses means.
+* **Techniques**: Normality checks, homogeneity assessments, two-way ANOVA tests, normal QQ plot graphs, residual vs. predicted graphs, and Tukey's HSD test for comparing doses means.
 * **Conclusions**:
   + Established that there is a significant impact of caffeine intake on endurance performance, revealing that caffein effectively improves individuals; endurance capabiltiies.
   + Dosage of caffeine may noy be a significant effect, as Treatment 1 (0 mg) showed a marked difference from all other treatments according to the results of the Tukey HSD test.
@@ -61,7 +61,7 @@ This is a repository to showcase skills, share projects and track my progress in
   + Formulated and executed the methodology, ensuring precision and reliability in the research process.
   + Utilized R scripts and applied advanced statistical techniques, focusing on Timepoint-treatment interaction plots and box plots, followed by ANOVA tests for within-treatment and within-timepoint comparisons.
   + Collaborated with team members to interpret and communicate outcomes derived from each statistical technique.
-* **Technologies Used**:
+* **Techniques**:
   + Timepoint-treatment interaction plots and box plots
   + ANOVA tests comparing within treatments, within timepoints, and interactions between them
   + Model adequacy checks, including assessments for normality and variance homogeneity
@@ -78,6 +78,6 @@ This is a repository to showcase skills, share projects and track my progress in
   + Applied knowledge of Student's theorem and properties of the t-distribution to assess the independence of Z and U.
   + Conducted a comprehensive Monte Carlo simulation to gather insights into the behavior of the variables.
   + Collaborated with team members to interpret and communicate the outcomes derived from the simulation and theoretical analyses.
-* **Technologies Used**: Monte Carlo simulation
+* **Techniques**: Monte Carlo simulation
 
 

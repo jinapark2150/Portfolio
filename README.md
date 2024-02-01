@@ -42,7 +42,7 @@ This is a repository to showcase skills, share projects and track my progress in
   + Dosage of caffeine may noy be a significant effect, as Treatment 1 (0 mg) showed a marked difference from all other treatments according to the results of the Tukey HSD test.
   + Individual cyclists played a crucial role, as indicated by smaller p-values, highlighting that endurance performance variations are more pronounced among cyclists themselves. This emphasizes the personalized nature of the impact of caffeine on endurance.
 
-#### [CO2 Exchange Under Wet and Dry Conditions Over Time](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/The%20Effect%20of%20Different%20Doses%20of%20Caffeine%20on%20Endurance%20PerformanceR)
+#### [CO2 Exchange Under Wet and Dry Conditions Over Time](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/CO2%20Exchange%20Under%20Wet%20and%20Dry%20Conditions%20Over%20Time.R)
 * **Description**: Investigated the optimal conditions for efficient carbon dioxide concentration exchange in plants, aiming to identify key factors influencing the process.
 * **Roles and Responsibilities**:
   + Formulated and executed the methodology, ensuring precision and reliability in the research process.

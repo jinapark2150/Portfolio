@@ -12,8 +12,9 @@ This is a repository to showcase skills, share projects and track my progress in
 
 ## Personal Projects
 ### R
-#### [Optimizing Concrete Aggregate Selection for Moisture Absorption](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/Effects%20of%20Latitude%20and%20Elevation%20on%20Temperature.pdf)
+#### [Effects of Latitude and Elevation on Temperature](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/Effects%20of%20Latitude%20and%20Elevation%20on%20Temperature.pdf)
 * **Description**: Utilized Bayesian inference to investigate the impact of latitude and elevation on temperature in 16 Texas counties. Collected and analyzed data to establish the relationship between these factors, enabling temperature forecasts.
+* **Technologies Used**: 
 
 
 

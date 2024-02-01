@@ -19,7 +19,15 @@ This is a repository to showcase skills, share projects and track my progress in
 
 * 
 ### Python
-* Description : created a simple game
+#### [Star Trek Enterprise Game](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/Star%20trek%20enterprise%20game.py)
+* **Description**: Developed an interactive game featuring the iconic Star Trek's Enterprise space shuttle engaged in a mission to eliminate Klingon adversaries. Players navigate the space environment, strategically moving the Enterprise to destroy Klingons while facing the challenge of potential damage during encounters.
+* **Algorithm**:
+  + Random generation of coordinates for 10 stars, 4 Klingons, and 1 Enterprise upon starting the game.
+  + Players control the Enterprise's movement using directional commands (East, West, South, North).
+  + The Enterprise has random chance of taking random amount of damage within certain range during encounters with Klingons.
+  + The Enterprise inflicts a random amount of damage on Klingons when attacking them.
+  + Players aim to navigate the Enterprise to eliminate all Klingons without being destroyed.
+  + If the Enterprise successfully defeats all Klingons without being destroyed, the game displays a victory message and exits.
 
 
 ## Group Projects

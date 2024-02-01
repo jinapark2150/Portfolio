@@ -16,7 +16,7 @@ This is a repository to showcase skills, share projects and track my progress in
 * **Description**: Utilized Bayesian inference to investigate the impact of latitude and elevation on temperature in 16 Texas counties. Collected and analyzed data to establish the relationship between these factors, enabling temperature forecasts.
 * **Techniques**: Data Visualization, Ordinary Least Squares (OLS) estimator, Model Selection based on AIC, Maximum Likelihood Estimation, Metropolis Algorithm
 
-#### [Analysis of Diabetes Risk Factors]
+#### [Analysis of Diabetes Risk Factors](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/Analysis%20of%20Diabetes%20Risk%20Factors.pdf)
 * **Description**: This study delves into diabetes, a rapidly increasing health concern with severe consequences. Using data from the National Institute of Diabetes and Digestive and Kidney Diseases on 768 Pima Indian women aged at least 21, advanced statistical techniques were employed. Models were developed through AIC and BIC methods, with variable elimination based on p-values. ANOVA tests, marginal model plots, and multicollinearity checks refined the models, highlighting diabetes pedigree function, BMI, glucose concentration, and insulin concentration as the most influential factors. Diabetes pedigree function exhibited the strongest impact, while insulin concentration had the least effect on diabetes risk.
 * **Techniques**: Data cleaning, Data Visualization, Model Development, Model Adequacy Check, Model Selection on AIC and BIC, ANOVA Test, Logistic Regression.
 

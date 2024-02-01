@@ -12,7 +12,12 @@ This is a repository to showcase skills, share projects and track my progress in
 
 ## Personal Projects
 ### R Studio
-* Description :
+#### [Optimizing Concrete Aggregate Selection for Moisture Absorption]()
+* **Description**:
+* **Techonologies used**:
+* **Outcomes**:
+
+* 
 ### Python
 * Description : created a simple game
 

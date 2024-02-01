@@ -1,0 +1,405 @@
+---
+title: "STAT 429 Group Project - Multiple Linear Regression of WHO Life Expectancy
+  Data"
+author:
+- "Jina Park - 30129680"
+- "Scott Holden - 30051473"
+- "Leigh Murray - 30075588"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+
+library(readxl)
+library(car)
+library(MASS)
+
+```
+
+
+```{r}
+Life_Expectancy_Data_raw <- read_excel("C:/Users/User/Desktop/STAT 429/Life_Expectancy_Data.xlsx")
+
+attach(Life_Expectancy_Data_raw)
+names(Life_Expectancy_Data_raw)
+
+dim(Life_Expectancy_Data_raw)
+#[1] 2938   22
+
+sum(is.na(Life_Expectancy_Data_raw)) # High presence of NULL values
+```
+
+Here we remove the rows containing null values.
+
+```{r}
+Life_Expectancy_Data<- na.omit(Life_Expectancy_Data_raw)
+remove(Life_Expectancy_Data_raw)
+dim(Life_Expectancy_Data)
+#[1] 1649   22
+
+length(Life_Expectancy_Data) #variables
+
+#how many mixing values we have for each variable
+
+sum(is.na(Life_Expectancy_Data))
+#[1] 0
+```
+
+# Variables and Descriptions
+
+Country - Country Name
+
+Year - Year of the data
+
+Status - Country Status of developed or developing
+
+Life_Expectancy - Life Expectancy in Age (Response)
+
+Adult_Mortality - Adult mortality rates (Probability of dying between 15 and 60 years per 1000 population)
+
+infant.deaths - Number of infant deaths per 1000 population
+
+Alcohol - Alcohol consumption per capita
+
+Percentage Expenditure - Expenditure on health as percentage of GDP
+
+Hepatitis B - HepB immunization coverage
+
+Measles - Number of reported cases per 1000 population
+
+BMI - Average Body mass index of entire population
+
+under_five_deaths - number of under five deaths per 1000 population
+
+Polio - Polio Immunization coverage among 1 year olds
+
+Total Expenditure - General government expenditure on health as percentage of total government expenditure
+
+Diphtheria - DTP3 Immunization coverage among 1 year olds
+
+HIV.AIDS - Deaths per 1000 live births with HIV/ AIDS (0-4 years)
+
+GDP - Gross Domestic product per capita
+
+Population - Population of the country
+
+thinness_10-19 years - prevelance of thinness among children aged 10-19
+
+thinness_5-9 years - prevelance of thinness among children aged 5 - 9
+
+Income Composition of Resources - Human development index
+
+Schooling - Number of years of schooling 
+
+
+#### Country and Status are both categorical variables, additionally Year is not considered as we seek to predict life expectancy regardless or time or place. Additionally, infant deaths is captured by under 5 deaths. So we can remove this variable also. 
+
+```{r}
+Life_Expectancy_Data <- subset(Life_Expectancy_Data, select = -c(Country, Year, Status, `infant deaths`))
+```
+
+# Cleaning and EDA
+
+```{r}
+head(Life_Expectancy_Data[0:6])
+head(Life_Expectancy_Data[7:12])
+head(Life_Expectancy_Data[13:18])
+```
+
+
+```{r}
+summary(Life_Expectancy_Data$`Life expectancy`)
+
+summary(Life_Expectancy_Data$`Adult Mortality`)
+
+summary(Life_Expectancy_Data$Alcohol)
+
+summary(Life_Expectancy_Data$`percentage expenditure`)
+
+summary(Life_Expectancy_Data$`Hepatitis B`)
+
+summary(Life_Expectancy_Data$Measles)
+
+summary(Life_Expectancy_Data$BMI)
+
+summary(Life_Expectancy_Data$Polio)
+
+summary(Life_Expectancy_Data$`under-five deaths`)
+
+summary(Life_Expectancy_Data$`Total expenditure`)
+
+summary(Life_Expectancy_Data$`Diphtheria`)
+
+summary(Life_Expectancy_Data$`HIV/AIDS`)
+
+summary(Life_Expectancy_Data$GDP)
+
+summary(Life_Expectancy_Data$Population)
+
+summary(Life_Expectancy_Data$`thinness  1-19 years`)
+
+summary(Life_Expectancy_Data$`thinness 5-9 years`)
+
+summary(Life_Expectancy_Data$`Income composition of resources`)
+
+summary(Life_Expectancy_Data$Schooling)
+```
+## Visual Inspection of Data
+```{r}
+
+par(mfrow=c(1,4))
+boxplot(`percentage expenditure`,main="Percentage Expenditure")
+boxplot(Measles,main="Measles")
+boxplot(`under-five deaths`,main="under-five deaths")
+boxplot(`HIV/AIDS`,main="HIV/AIDS")
+
+par(mfrow=c(1,5))
+boxplot(`Adult Mortality`, main= "Adult Mortality")
+boxplot(Alcohol, main="Alcohol Cons.")
+boxplot(`Hepatitis B`, main="Hepatitis B")
+boxplot(BMI, main = "BMI")
+boxplot(Polio, main= "Polio")
+
+par(mfrow=c(1,5))
+boxplot(`Total expenditure`, main="Total Expenditure")
+boxplot(Diphtheria, main="Diphtheria")
+boxplot(Measles, main="Measles")
+boxplot(Population, main="Population")
+boxplot(`thinness  1-19 years`, main="Thinness in children 10-19 years old")
+
+par(mfrow=c(1,3))
+boxplot(`thinness 5-9 years`, main="Thinness in children 5-9 years old")
+boxplot(`Income composition of resources`, main="Income Composition of Resources")
+boxplot(Schooling, main="Schooling")
+
+```
+
+The boxplots indicate that the majority of the predictor variables have lots of outliers. Only Alcohol consumption, BMI, Income Composition of Resources and Schooling contain few or no outliers.
+
+```{r}
+#This one should be our y-variables
+par(mfrow=c(1,1))
+boxplot(`Life expectancy`,main="Life expectancy",
+col="mediumaquamarine")
+```
+
+```{r}
+par(mfrow=c(3,2))
+
+plot(Life_Expectancy_Data$`Adult Mortality`, Life_Expectancy_Data$`Life expectancy`)
+abline(lsfit(Life_Expectancy_Data$`Adult Mortality`, Life_Expectancy_Data$`Life expectancy`), lty=2, col='red', lwd=2)
+
+plot(Life_Expectancy_Data$Alcohol, Life_Expectancy_Data$`Life expectancy`)
+abline(lsfit(Life_Expectancy_Data$Alcohol, Life_Expectancy_Data$`Life expectancy`), lty=2, col='red', lwd=2)
+
+plot(Life_Expectancy_Data$`percentage expenditure`, Life_Expectancy_Data$`Life expectancy`)
+abline(lsfit(Life_Expectancy_Data$`percentage expenditure`, Life_Expectancy_Data$`Life expectancy`), lty=2, col='red', lwd=2)
+
+plot(Life_Expectancy_Data$`Hepatitis B`, Life_Expectancy_Data$`Life expectancy`)
+abline(lsfit(Life_Expectancy_Data$`Hepatitis B`, Life_Expectancy_Data$`Life expectancy`), lty=2, col='red', lwd=2)
+
+
+plot(Life_Expectancy_Data$Measles, Life_Expectancy_Data$`Life expectancy`)
+abline(lsfit(Life_Expectancy_Data$Measles, Life_Expectancy_Data$`Life expectancy`), lty=2, col='red', lwd=2)
+
+```
+
+```{r}
+par(mfrow=c(3,2))
+
+plot(Life_Expectancy_Data$BMI, Life_Expectancy_Data$`Life expectancy`)
+abline(lsfit(Life_Expectancy_Data$BMI, Life_Expectancy_Data$`Life expectancy`), lty=2, col='red', lwd=2)
+
+plot(Life_Expectancy_Data$Polio, Life_Expectancy_Data$`Life expectancy`)
+abline(lsfit(Life_Expectancy_Data$Polio, Life_Expectancy_Data$`Life expectancy`), lty=2, col='red', lwd=2)
+
+plot(Life_Expectancy_Data$`under-five deaths`, Life_Expectancy_Data$`Life expectancy`)
+abline(lsfit(Life_Expectancy_Data$`under-five deaths`, Life_Expectancy_Data$`Life expectancy`), lty=2, col='red', lwd=2)
+
+plot(Life_Expectancy_Data$`Total expenditure`, Life_Expectancy_Data$`Life expectancy`)
+abline(lsfit(Life_Expectancy_Data$`Total expenditure`, Life_Expectancy_Data$`Life expectancy`), lty=2, col='red', lwd=2)
+
+
+plot(Life_Expectancy_Data$`Diphtheria`, Life_Expectancy_Data$`Life expectancy`)
+abline(lsfit(Life_Expectancy_Data$`Diphtheria`, Life_Expectancy_Data$`Life expectancy`), lty=2, col='red', lwd=2)
+
+plot(Life_Expectancy_Data$`HIV/AIDS`, Life_Expectancy_Data$`Life expectancy`)
+abline(lsfit(Life_Expectancy_Data$`HIV/AIDS`, Life_Expectancy_Data$`Life expectancy`), lty=2, col='red', lwd=2)
+```
+
+```{r}
+par(mfrow=c(3,2))
+
+plot(Life_Expectancy_Data$GDP, Life_Expectancy_Data$`Life expectancy`)
+abline(lsfit(Life_Expectancy_Data$GDP, Life_Expectancy_Data$`Life expectancy`), lty=2, col='red', lwd=2)
+
+plot(Life_Expectancy_Data$Population, Life_Expectancy_Data$`Life expectancy`)
+abline(lsfit(Life_Expectancy_Data$Population, Life_Expectancy_Data$`Life expectancy`), lty=2, col='red', lwd=2)
+
+plot(Life_Expectancy_Data$`thinness  1-19 years`, Life_Expectancy_Data$`Life expectancy`)
+abline(lsfit(Life_Expectancy_Data$`thinness  1-19 years`, Life_Expectancy_Data$`Life expectancy`), lty=2, col='red', lwd=2)
+
+plot(Life_Expectancy_Data$`thinness 5-9 years`, Life_Expectancy_Data$`Life expectancy`)
+abline(lsfit(Life_Expectancy_Data$`thinness 5-9 years`, Life_Expectancy_Data$`Life expectancy`), lty=2, col='red', lwd=2)
+
+
+plot(Life_Expectancy_Data$`Income composition of resources`, Life_Expectancy_Data$`Life expectancy`)
+abline(lsfit(Life_Expectancy_Data$`Income composition of resources`, Life_Expectancy_Data$`Life expectancy`), lty=2, col='red', lwd=2)
+
+plot(Life_Expectancy_Data$Schooling, Life_Expectancy_Data$`Life expectancy`)
+abline(lsfit(Life_Expectancy_Data$Schooling, Life_Expectancy_Data$`Life expectancy`), lty=2, col='red', lwd=2)
+```
+
+# Model Development 
+```{r}
+m1<-lm(Life_Expectancy_Data$`Life expectancy`~`Adult Mortality`+Alcohol+`percentage expenditure`+`Hepatitis B`+Measles+BMI+`under-five deaths`+Polio+`Total expenditure`+`Diphtheria`+`HIV/AIDS`+GDP+Population+`thinness  1-19 years`+`thinness 5-9 years`+`Income composition of resources`+Schooling, data=Life_Expectancy_Data)
+summary(m1)
+```
+
+```{r}
+vif(m1) #multicolinial check
+
+par(mfrow=c(3,2))
+plot(m1)
+plot(m1$fitted.values, rstandard(m1),xlab="Fitted values",
+ylab="Standardized residuals of model m1")
+plot(m1$fitted.values, Life_Expectancy_Data$`Life expectancy`, xlab="m1 fitted values",ylab="1")
+abline(lsfit(m1$fitted.values,Life_Expectancy_Data$`Life expectancy`))
+```
+
+```{r}
+mmp(m1)
+```
+
+```{r}
+mm1<-lm(Life_Expectancy_Data$`Life expectancy`~`Adult Mortality`+Alcohol+`percentage expenditure`+BMI+`under-five deaths`+`Diphtheria`+`HIV/AIDS`+`Income composition of resources`+Schooling, data=Life_Expectancy_Data)
+summary(mm1)
+```
+
+```{r}
+vif(mm1) #multicolinial check
+
+par(mfrow=c(3,2))
+plot(mm1)
+plot(mm1$fitted.values, rstandard(mm1),xlab="Fitted values",
+ylab="Standardized residuals of model mm1")
+plot(mm1$fitted.values, Life_Expectancy_Data$`Life expectancy`, xlab="mm1 fitted values",ylab="1")
+abline(lsfit(m1$fitted.values,Life_Expectancy_Data$`Life expectancy`))
+```
+
+```{r}
+mmp(mm1)
+```
+
+```{r}
+anova(m1,mm1)
+```
+
+### BIC Backward Elimination
+
+```{r}
+n=nrow(Life_Expectancy_Data)
+backBIC<-step(m1,direction="backward",k=log(n))
+```
+
+#### Model developed on BE variable subset
+```{r}
+m2<-lm(`Life expectancy`~`Adult Mortality`+`percentage expenditure`+BMI+`under-five deaths`+`Diphtheria`+`HIV/AIDS`+`Income composition of resources`+Schooling, data=Life_Expectancy_Data)
+summary(m2)
+```
+
+```{r}
+mmp(m2)
+```
+```{r}
+vif(m2)
+```
+
+```{r}
+anova(m2,m1) #p-value = 0.1657, Use Transformation
+
+par(mfrow=c(3,2))
+plot(m2)
+plot(m2$fitted.values, rstandard(m2),xlab="Fitted values",
+ylab="Standardized residuals of model m2")
+plot(m2$fitted.values, Life_Expectancy_Data$`Life expectancy`, xlab="m2 fitted values",ylab="1")
+abline(lsfit(m1$fitted.values,Life_Expectancy_Data$`Life expectancy`))
+```
+
+```{r}
+plot(m2$fitted.values, rstandard(m2),xlab="Fitted values",ylab="Standardized residuals of m2")
+abline(h=4,lty=2,col=6,lwd=2)
+abline(h=-4,lty=2,col=6,lwd=2)
+#identify(m2$fitted.values,rstandard(m2))
+```
+
+#### Power Transform to further refine model
+```{r}
+summary(powerTransform(cbind(`Life expectancy`,`Adult Mortality`,BMI,`Diphtheria`,`HIV/AIDS`)~1),data=Life_Expectancy_Data)
+#Adult - square root
+#HIV/AIDS - 1/square root
+```
+
+```{r}
+tadult<-(Life_Expectancy_Data$`Adult Mortality`)^2
+thiv<- 1/sqrt(Life_Expectancy_Data$`HIV/AIDS`)
+m3<-lm(`Life expectancy`~tadult+`percentage expenditure`+BMI+`under-five deaths`+`Diphtheria`+thiv+`Income composition of resources`+Schooling, data=Life_Expectancy_Data)
+summary(m3)
+```
+
+```{r}
+par(mfrow=c(2,2))
+plot(m3)
+```
+
+```{r}
+plot(m3$fitted.values, rstandard(m3),xlab="Fitted values",ylab="Standardized residuals of m3")
+abline(h=4,lty=2,col=6,lwd=2)
+abline(h=-4,lty=2,col=6,lwd=2)
+identify(m3$fitted.values,rstandard(m3))
+```
+
+```{r}
+mmp(m3)
+```
+
+```{r}
+vif(m3)
+```
+
+#### Square root of BIC selected variables
+```{r}
+m4<-lm(sqrt(`Life expectancy`)~sqrt(`Adult Mortality`)+sqrt(`percentage expenditure`)+sqrt(BMI)+sqrt(`under-five deaths`)+sqrt(`Diphtheria`)+sqrt(`HIV/AIDS`)+sqrt(`Income composition of resources`)+sqrt(Schooling), data=Life_Expectancy_Data)
+summary(m4)
+```
+
+```{r}
+par(mfrow=c(2,2))
+plot(m4)
+```
+
+```{r}
+plot(m4$fitted.values, rstandard(m4),xlab="Fitted values",ylab="Standardized residuals of m4")
+abline(h=4,lty=2,col=6,lwd=2)
+abline(h=-4,lty=2,col=6,lwd=2)
+identify(m4$fitted.values,rstandard(m4))
+```
+
+```{r}
+mmps(m4)
+```
+```{r}
+vif(m4)
+```
+
+```{r}
+anova(m2,m4)
+```
+
+
+

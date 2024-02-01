@@ -13,11 +13,10 @@ This is a repository to showcase skills, share projects and track my progress in
 ## Personal Projects
 ### R
 #### [Optimizing Concrete Aggregate Selection for Moisture Absorption](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/Effects%20of%20Latitude%20and%20Elevation%20on%20Temperature.pdf)
-* **Description**:
-* **Techonologies used**:
-* **Outcomes**:
+* **Description**: Utilized Bayesian inference to investigate the impact of latitude and elevation on temperature in 16 Texas counties. Collected and analyzed data to establish the relationship between these factors, enabling temperature forecasts.
 
-* 
+
+
 ### Python
 #### [Star Trek Enterprise Game](https://github.com/jinapark2150/Portfolio_Jina-Park/blob/main/Star%20trek%20enterprise%20game.py)
 * **Description**: Developed an interactive game featuring the iconic Star Trek's Enterprise space shuttle engaged in a mission to eliminate Klingon adversaries. Players navigate the space environment, strategically moving the Enterprise to destroy Klingons while facing the challenge of potential damage during encounters.
